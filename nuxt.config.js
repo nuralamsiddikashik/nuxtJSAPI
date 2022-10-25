@@ -43,15 +43,19 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://127.0.0.1:8000/api',
+    baseURL: 'http://localhost:8000/api',
     credentials:true
+  },
+
+  router: {
+    middleware: ['auth']
   },
 
   auth: {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: 'http://127.0.0.1:8000', 
+        url: 'http://localhost:8000', 
         endpoints:{
           login:{
             url:"/api/login",

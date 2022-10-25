@@ -62,7 +62,6 @@
       async login() {
         try {
           await this.$auth.loginWith('laravelSanctum', {
-            
             data: {
             email: this.email,
             password: this.password
@@ -71,7 +70,7 @@
         } catch (e) {
           this.error = e.response.data.message
         }
-        console.log(this.$auth.loggedIn)
+       
       }
     }
   }
